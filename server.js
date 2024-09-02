@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const userRoutes = require('./routes/users');
 require('./config/db'); // Import and connect to MongoDB
 
+app.use(cors());
 app.use(express.json()); // Middleware to parse JSON bodies
 
 // Use user routes
